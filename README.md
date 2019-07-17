@@ -42,10 +42,10 @@ Write helpers methods in `./schemes/scheme-model.js` that match the following sp
   - [x] Expects a scheme object.
   - [x] Inserts scheme into the database.
   - [x] Resolves to the newly inserted scheme, including `id`.
-- `update(changes, id)`:
-  - Expects a changes object and an `id`.
-  - Updates the scheme with the given id.
-  - Resolves to the newly updated scheme object.
+- [x] `update(changes, id)`:
+  - [x] Expects a changes object and an `id`.
+  - [x] Updates the scheme with the given id.
+  - [x] Resolves to the newly updated scheme object.
 - `remove(id)`:
   - Removes the scheme object with the provided id.
   - Resolves to the removed scheme

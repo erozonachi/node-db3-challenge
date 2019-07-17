@@ -23,4 +23,11 @@ module.exports = {
     .insert(newScheme)
     .then(([id]) => this.findById(id));
   },
+
+  update: function (changes, id) {
+    return db('schemes')
+      .where({ id })
+      .update(changes)
+      .then(count => (count > 0 ? this.findById(id) : null));
+  },
 };
