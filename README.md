@@ -38,10 +38,10 @@ Write helpers methods in `./schemes/scheme-model.js` that match the following sp
   -[x] Expects a scheme `id`.
   - [x] Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
   - [x] This array should include the `scheme_name` _not_ the `scheme_id`.
-- `add(scheme)`:
-  - Expects a scheme object.
-  - Inserts scheme into the database.
-  - Resolves to the newly inserted scheme, including `id`.
+- [x] `add(scheme)`:
+  - [x] Expects a scheme object.
+  - [x] Inserts scheme into the database.
+  - [x] Resolves to the newly inserted scheme, including `id`.
 - `update(changes, id)`:
   - Expects a changes object and an `id`.
   - Updates the scheme with the given id.

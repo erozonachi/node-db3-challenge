@@ -17,4 +17,10 @@ module.exports = {
       .innerJoin('schemes', 'steps.scheme_id', 'schemes.id')
       .orderBy('steps.step_number');
   },
+
+  add: function (newScheme) {
+    return db('schemes')
+    .insert(newScheme)
+    .then(([id]) => this.findById(id));
+  },
 };
