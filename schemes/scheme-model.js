@@ -1,4 +1,5 @@
 const db = require('../data/dbConfig');
+const stepModel = require('../steps/step-model');
 
 module.exports = {
   find: function() {
@@ -45,5 +46,11 @@ module.exports = {
         .del();
       })
       .then(count => (count > 0 ? scheme : null));
+  },
+
+  addStep: function (step, scheme_id) {
+    return db('steps')
+    .insert({...step, scheme_id})
+    .then(([id]) => stepModel.findById(id)); 
   },
 };
