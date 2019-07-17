@@ -13,6 +13,12 @@ WHERE orderdate < '1997-01-09';
 
 ### Display all ProductNames and Quantities placed on order 10251. Sort by ProductName. Shows 3 records.
 
+SELECT productname as Product_Name, quantity as Ordered_Quantity 
+FROM orderdetails AS o
+JOIN products AS p ON o.productid = p.productid
+WHERE orderid = 10251
+ORDER BY p.productname;
+
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
 ### (Stretch)  Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 9 records.
