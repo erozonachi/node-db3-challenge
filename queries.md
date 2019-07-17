@@ -21,6 +21,10 @@ ORDER BY p.productname;
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
+SELECT orderid AS Order_ID, customername AS Customer_Name, lastname AS Employee_Last_Name
+FROM orders AS o
+JOIN customers AS c ON o.customerid = c.customerid, employees AS e ON o.employeeid = e.employeeid;
+
 ### (Stretch)  Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 9 records.
 
 ### (Stretch) Display OrderID and a  column called ItemCount that shows the total number of products placed on the order. Shows 196 records. 
