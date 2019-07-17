@@ -10,4 +10,11 @@ module.exports = {
       .where({ id })
       .then(data => (data.length > 0 ? data[0] : null));
   },
+  
+  findSteps: function(id) {
+    return db.select('steps.id, scheme_name, step_number, instructions')
+      .from('steps')
+      .innerJoin('schemes', 'steps.scheme_id', 'schemes.id')
+      .orderBy('steps.step_number');
+  },
 };
