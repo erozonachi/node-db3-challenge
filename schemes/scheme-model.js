@@ -1,3 +1,7 @@
 const db = require('../data/dbConfig');
 
-module.exports = {};
+module.exports = {
+  find: function() {
+    return db('schemes');
+  },
+};
