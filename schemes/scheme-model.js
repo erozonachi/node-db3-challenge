@@ -30,4 +30,19 @@ module.exports = {
       .update(changes)
       .then(count => (count > 0 ? this.findById(id) : null));
   },
+
+  remove: function (id) {
+    let scheme = null;
+    return this.findById(id)
+      .then(data => {
+        if(!data) {
+          return 0;
+        }
+        scheme = data;
+        return db('schemes')
+        .where({ id })
+        .del();
+      })
+      .then(count => (count > 0 ? scheme : null));
+  },
 };
