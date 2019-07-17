@@ -12,9 +12,10 @@ module.exports = {
   },
   
   findSteps: function(id) {
-    return db.select('steps.id, scheme_name, step_number, instructions')
-      .from('steps')
-      .innerJoin('schemes', 'steps.scheme_id', 'schemes.id')
+    return db('steps')
+      .join('schemes', 'steps.scheme_id', 'schemes.id')
+      .where('schemes.id', id)
+      .select('steps.id', 'scheme_name', 'steps.step_number', 'steps.instructions')
       .orderBy('steps.step_number');
   },
 
